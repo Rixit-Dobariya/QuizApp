@@ -1,0 +1,12 @@
+﻿1. Login
+2. Register
+
+Admin:
+	- Quizes
+	- Add quiz
+	- Update quiz
+		-Delete questions
+		-add questions
+		-change title of the quiz
+		-how many questions should be deleted
+	- Delete quiz
