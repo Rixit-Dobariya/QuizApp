@@ -16,10 +16,10 @@ namespace QuizApp
         {
             InitializeComponent();
         }
-        
-        private void MainForm_Load(object sender, EventArgs e)
+
+    private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadUserControl(new Login());
+            LoadUserControl(new Register());
             LoadHeaderUserControl(new LoginHeader());
         }
         public void LoadUserControl(UserControl userControl)

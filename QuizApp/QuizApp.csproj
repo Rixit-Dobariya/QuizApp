@@ -186,6 +186,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\brain.png" />
     <Content Include="QuizDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

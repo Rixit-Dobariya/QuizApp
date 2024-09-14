@@ -20,7 +20,7 @@ namespace QuizApp
             users = new Users();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void guna2Button3_Click(object sender, EventArgs e)
         {
             string username = txtName.Text;
             string password = txtPassword.Text;
@@ -37,6 +37,10 @@ namespace QuizApp
             {
                 errorMessage1.Text = "Username can't be lengthier than 50 letters!";
             }
+            else
+            {
+                errorMessage1.Text = "";
+            }
 
             if (password.Equals(""))
             {
@@ -50,25 +54,39 @@ namespace QuizApp
             {
                 errorMessage2.Text = "password can't be lengthier than 50 letters!";
             }
-            else if (users.ValidateAdmin(username, password))
-            {
-                errorMessage1.Text = "";
-                errorMessage2.Text = "";
-                mainForm.LoadUserControl(new MainAdmin());
-                mainForm.LoadHeaderUserControl(new AdminHeader());
-            }
-            else if (users.ValidateUser(username, password))
-            {
-                errorMessage1.Text = "";
-                errorMessage2.Text = "";
-                MessageBox.Show("True");
-            }
             else
             {
-                errorMessage1.Text = "";
                 errorMessage2.Text = "";
-                MessageBox.Show("Either password or username is wrong!");
             }
+
+            if(errorMessage1.Text.Equals("") && errorMessage2.Text.Equals(""))
+            {
+                if (users.ValidateAdmin(username, password))
+                {
+                    errorMessage1.Text = "";
+                    errorMessage2.Text = "";
+                    mainForm.LoadUserControl(new MainAdmin());
+                    mainForm.LoadHeaderUserControl(new AdminHeader());
+                }
+                else if (users.ValidateUser(username, password))
+                {
+                    errorMessage1.Text = "";
+                    errorMessage2.Text = "";
+                    MessageBox.Show("True");
+                }
+                else
+                {
+                    errorMessage1.Text = "";
+                    errorMessage2.Text = "";
+                    MessageBox.Show("Either password or username is wrong!");
+                }
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = (MainForm)FindForm();
+            mainForm.LoadUserControl(new Register());
         }
     }
 }

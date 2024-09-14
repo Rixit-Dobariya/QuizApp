@@ -36,6 +36,11 @@ namespace QuizApp
             {
                 errorMessage2.Text = "password can't be lengthier than 50 letters!";
             }
+            else
+            {
+                errorMessage2.Text = "";
+            }
+
             if (username.Equals(""))
             {
                 errorMessage1.Text = "Username can't be empty!";
@@ -48,20 +53,27 @@ namespace QuizApp
             {
                 errorMessage1.Text = "Username can't be lengthier than 50 letters!";
             }
-            //database validation
-            else if (users.ValidateUsername(username))
-            {
-                errorMessage1.Text = "Username is already taken!";
-            }
             else
             {
-                users.AddUsers(username, password);
-                MessageBox.Show("You have successfully registered");
+                errorMessage1.Text = "";
+            }
+            //database validation
+            if (errorMessage1.Text.Equals("") && errorMessage2.Text.Equals(""))
+            {
+                if (users.ValidateUsername(username))
+                {
+                    errorMessage1.Text = "Username is already taken!";
+                }
+                else
+                {
+                    users.AddUsers(username, password);
+                    MessageBox.Show("You have successfully registered");
 
-                txtName.Text = "";
-                txtPassword.Text = "";
-                MainForm mainForm = (MainForm)FindForm();
-                mainForm.LoadUserControl(new Login());
+                    txtName.Text = "";
+                    txtPassword.Text = "";
+                    MainForm mainForm = (MainForm)FindForm();
+                    mainForm.LoadUserControl(new Login());
+                }
             }
             
         }
@@ -70,5 +82,12 @@ namespace QuizApp
         {
             
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = (MainForm)FindForm();
+            mainForm.LoadUserControl(new Login());
+        }
+        
     }
 }
