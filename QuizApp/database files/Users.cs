@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
+using System.Data;
 
 namespace QuizApp.database_files
 {
@@ -14,6 +10,17 @@ namespace QuizApp.database_files
         public Users()
         {
             con = Connection.GetConnection();
+        }
+        public bool ValidateUsername(string username)
+        {
+            string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            cmd.Parameters.AddWithValue("@Username", username);
+
+            int userCount = (int)cmd.ExecuteScalar();
+
+            return userCount > 0;
         }
         public void AddUsers(string username, string password)
         {
@@ -49,6 +56,17 @@ namespace QuizApp.database_files
             int userCount = (int)cmd.ExecuteScalar();
 
             return userCount > 0;
+        }
+        public DataSet GetUsers(string panel)
+        {
+            DataSet ds = new DataSet();
+            if (panel.Equals("Admin"))
+            {
+                string query = "select UserId, Username, Password from Users where Role='User'";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.Fill(ds);
+            }
+            return ds;
         }
     }
 }

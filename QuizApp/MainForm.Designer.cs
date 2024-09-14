@@ -35,16 +35,18 @@ namespace QuizApp
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Location = new System.Drawing.Point(7, 94);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(781, 344);
+            this.guna2Panel1.Size = new System.Drawing.Size(800, 450);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Location = new System.Drawing.Point(7, 12);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(781, 63);
+            this.guna2Panel2.Size = new System.Drawing.Size(800, 63);
             this.guna2Panel2.TabIndex = 1;
             // 
             // MainForm

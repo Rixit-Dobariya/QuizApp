@@ -25,19 +25,49 @@ namespace QuizApp
             string username = txtName.Text;
             string password = txtPassword.Text;
             MainForm mainForm = (MainForm)FindForm();
-            
-            if (users.ValidateAdmin(username, password))
+            if (username.Equals(""))
             {
+                errorMessage1.Text = "Username can't be empty!";
+            }
+            else if (username.Length < 5)
+            {
+                errorMessage1.Text = "Username can't be shorter than 5 letters!";
+            }
+            else if (username.Length > 50)
+            {
+                errorMessage1.Text = "Username can't be lengthier than 50 letters!";
+            }
+
+            if (password.Equals(""))
+            {
+                errorMessage2.Text = "Password can't be empty!";
+            }
+            else if (password.Length < 6)
+            {
+                errorMessage2.Text = "password can't be shorter than 6 letters!";
+            }
+            else if (password.Length > 50)
+            {
+                errorMessage2.Text = "password can't be lengthier than 50 letters!";
+            }
+            else if (users.ValidateAdmin(username, password))
+            {
+                errorMessage1.Text = "";
+                errorMessage2.Text = "";
                 mainForm.LoadUserControl(new MainAdmin());
                 mainForm.LoadHeaderUserControl(new AdminHeader());
             }
             else if (users.ValidateUser(username, password))
             {
+                errorMessage1.Text = "";
+                errorMessage2.Text = "";
                 MessageBox.Show("True");
             }
             else
             {
-                MessageBox.Show("False");
+                errorMessage1.Text = "";
+                errorMessage2.Text = "";
+                MessageBox.Show("Either password or username is wrong!");
             }
         }
     }

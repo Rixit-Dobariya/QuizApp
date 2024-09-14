@@ -33,6 +33,8 @@ namespace QuizApp
             this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.errorMessage1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.errorMessage2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -53,7 +55,7 @@ namespace QuizApp
             this.btnRegister.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(231, 258);
+            this.btnRegister.Location = new System.Drawing.Point(231, 284);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(300, 45);
             this.btnRegister.TabIndex = 22;
@@ -99,15 +101,35 @@ namespace QuizApp
             this.txtName.Size = new System.Drawing.Size(300, 36);
             this.txtName.TabIndex = 20;
             // 
-            // LoginUserControl
+            // errorMessage1
+            // 
+            this.errorMessage1.BackColor = System.Drawing.Color.Transparent;
+            this.errorMessage1.ForeColor = System.Drawing.Color.Red;
+            this.errorMessage1.Location = new System.Drawing.Point(231, 187);
+            this.errorMessage1.Name = "errorMessage1";
+            this.errorMessage1.Size = new System.Drawing.Size(3, 2);
+            this.errorMessage1.TabIndex = 24;
+            // 
+            // errorMessage2
+            // 
+            this.errorMessage2.BackColor = System.Drawing.Color.Transparent;
+            this.errorMessage2.ForeColor = System.Drawing.Color.Red;
+            this.errorMessage2.Location = new System.Drawing.Point(231, 250);
+            this.errorMessage2.Name = "errorMessage2";
+            this.errorMessage2.Size = new System.Drawing.Size(3, 2);
+            this.errorMessage2.TabIndex = 25;
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.errorMessage2);
+            this.Controls.Add(this.errorMessage1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
-            this.Name = "LoginUserControl";
+            this.Name = "Login";
             this.Size = new System.Drawing.Size(762, 429);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -119,5 +141,7 @@ namespace QuizApp
         private Guna.UI2.WinForms.Guna2Button btnRegister;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel errorMessage1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel errorMessage2;
     }
 }

@@ -16,7 +16,7 @@ namespace QuizApp
         {
             InitializeComponent();
         }
-
+        
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadUserControl(new Login());

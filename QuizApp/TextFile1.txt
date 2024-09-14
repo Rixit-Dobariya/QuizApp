@@ -1,7 +1,8 @@
-﻿1. Login
+﻿1. Login 
 2. Register
 
 Admin:
+	- Manage users
 	- Quizes
 	- Add quiz
 	- Update quiz
@@ -10,3 +11,7 @@ Admin:
 		-change title of the quiz
 		-how many questions should be deleted
 	- Delete quiz
+
+
+-------------------------------
+- Add password recovery method

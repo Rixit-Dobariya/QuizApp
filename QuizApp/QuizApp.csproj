@@ -73,7 +73,20 @@
     <Compile Include="AdminHeader.Designer.cs">
       <DependentUpon>AdminHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminQuizes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminQuizes.Designer.cs">
+      <DependentUpon>AdminQuizes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminUsers.Designer.cs">
+      <DependentUpon>AdminUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="database files\Connection.cs" />
+    <Compile Include="database files\User.cs" />
     <Compile Include="database files\Users.cs" />
     <Compile Include="LoginHeader.cs">
       <SubType>UserControl</SubType>
@@ -107,8 +120,32 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddQuiz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddQuiz.Designer.cs">
+      <DependentUpon>AddQuiz.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddQuiz.resx">
+      <DependentUpon>AddQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminHeader.resx">
       <DependentUpon>AdminHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminQuizes.resx">
+      <DependentUpon>AdminQuizes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUsers.resx">
+      <DependentUpon>AdminUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginHeader.resx">
       <DependentUpon>LoginHeader.cs</DependentUpon>

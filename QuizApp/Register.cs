@@ -24,13 +24,51 @@ namespace QuizApp
         {
             string username = txtName.Text;
             string password = txtPassword.Text;
-            users.AddUsers(username, password);
-            MessageBox.Show("You have successfully registered");
+            if (password.Equals(""))
+            {
+                errorMessage2.Text = "Password can't be empty!";
+            }
+            else if (password.Length < 6)
+            {
+                errorMessage2.Text = "password can't be shorter than 6 letters!";
+            }
+            else if (password.Length > 50)
+            {
+                errorMessage2.Text = "password can't be lengthier than 50 letters!";
+            }
+            if (username.Equals(""))
+            {
+                errorMessage1.Text = "Username can't be empty!";
+            }
+            else if (username.Length < 5)
+            {
+                errorMessage1.Text = "Username can't be shorter than 5 letters!";
+            }
+            else if (username.Length > 50)
+            {
+                errorMessage1.Text = "Username can't be lengthier than 50 letters!";
+            }
+            //database validation
+            else if (users.ValidateUsername(username))
+            {
+                errorMessage1.Text = "Username is already taken!";
+            }
+            else
+            {
+                users.AddUsers(username, password);
+                MessageBox.Show("You have successfully registered");
 
-            txtName.Text = "";
-            txtPassword.Text = "";
-            MainForm mainForm = (MainForm)FindForm();
-            mainForm.LoadUserControl(new Login());
+                txtName.Text = "";
+                txtPassword.Text = "";
+                MainForm mainForm = (MainForm)FindForm();
+                mainForm.LoadUserControl(new Login());
+            }
+            
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

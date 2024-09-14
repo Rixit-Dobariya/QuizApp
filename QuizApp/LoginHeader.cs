@@ -17,17 +17,20 @@ namespace QuizApp
             InitializeComponent();
         }
 
+   
+
+
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = (MainForm)FindForm();
+            mainForm.LoadUserControl(new Register());
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             MainForm mainForm = (MainForm)FindForm();
             mainForm.LoadUserControl(new Login());
-        }
-
-
-        private void guna2Button2_Click_1(object sender, EventArgs e)
-        {
-            MainForm mainForm = (MainForm)FindForm();
-            mainForm.LoadUserControl(new Register());
         }
     }
 }
